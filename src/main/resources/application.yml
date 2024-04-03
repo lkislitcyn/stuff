@@ -1,0 +1,41 @@
+#server:
+#  port: 8080
+
+spring:
+  application:
+    name: stuff
+  liquibase:
+    enabled: true
+    change-log: db/changelog/master-changelog.xml
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    show-sql: true
+    database-platform: postgres
+  datasource:
+    url: jdbc:postgresql://localhost:5432/
+    username: postgres
+    password: qwerty
+    driver-class-name: org.postgresql.Driver
+
+
+
+#  sql:
+#    init:
+#      platform: postgres
+#
+#spring.jpa:
+#  database: POSTGRESQL
+#  hibernate.ddl-auto: create-drop
+#  show-sql: true
+#
+#spring.datasource:
+#  driverClassName: org.postgresql.Driver
+#  url: jdbc:postgresql://localhost:5432/
+#  username: postgres
+#  password: qwerty
+
