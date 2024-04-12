@@ -13,7 +13,7 @@
             </column>
             <column name="job_title" type="varchar(50)"/>
             <column name="salary" type="bigint"/>
-            <column name="person_id" type="bigint"/>
+<!--            <column name="person_id" type="bigint"/>-->
         </createTable>
 
     </changeSet>

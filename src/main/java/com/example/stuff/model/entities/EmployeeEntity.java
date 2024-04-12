@@ -18,16 +18,13 @@ public class EmployeeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
-    private int id;
+    private long id;
 
     @Column(name = "job_title")
     private String job_title;
 
     @Column(name = "salary")
-    private int salart;
-
-    @Column(name = "person_id")
-    private int person_id;
+    private long salart;
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
