@@ -28,17 +28,6 @@ public interface AddressMapper {
         target.setPlace(String.format("%s %s %s %s", address.getCountry(), address.getCity(), address.getStreet(), address.getHomeNumber()));
 
     }
-
-//    @Mapping(target = "flightReplacementEnabled", ignore = true)
-//    FlightReplacementPassenger fromPersonAndSeat(Person person, Seat seat);
-//
-//
-//    @AfterMapping
-//    default void mapInfantInfo(Person source, @MappingTarget FlightReplacementPassenger target) {
-//        target.setInfant(
-//                !StringUtils.isEmpty(source.getInfantFirstName()) &&
-//                        !StringUtils.isEmpty(source.getInfantLastName()));
-//    }
 }
 
 

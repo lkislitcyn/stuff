@@ -14,12 +14,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/stuff/address")
 public class AddressController {
-
     private final AddressService addressService;
 
     private final AddressMapper addressMapper;
-
-
     @GetMapping("/list")
     public List<AddressDTO> test() {
         return addressService.getAllAddresses().stream().map(addressMapper::toDTO).toList();
@@ -30,7 +27,7 @@ public class AddressController {
         return addressService.getAllAddresses().stream().map(addressMapper::toDTOShort).toList();
     }
 
-    @PostMapping(value = "/")
+    @PostMapping("/")
     public long saveAddress(@RequestBody AddressDTO addressDTO) {
         return addressService.saveAddress(addressDTO);
     }

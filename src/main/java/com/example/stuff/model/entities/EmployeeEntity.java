@@ -32,7 +32,7 @@ public class EmployeeEntity {
             joinColumns = {@JoinColumn(name = "employee_id")},
             inverseJoinColumns = {@JoinColumn(name = "person_id")}
     )
-    Set<Person> projects = new HashSet<>();
+    Set<PersonEntity> projects = new HashSet<>();
 
 
 }
