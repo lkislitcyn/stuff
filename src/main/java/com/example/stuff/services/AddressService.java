@@ -53,4 +53,8 @@ public class AddressService {
         return addressEntity.getId();
     }
 
+    public List<Long> saveAll(List<AddressDTO> addressDTOS) {
+        return addressRepository.saveAll(addressDTOS.stream().map(addressMapper::fromDTO).map(addressMapper::toEntity).toList()).stream().map(addressEntity -> addressEntity.getId()).toList();
+    }
+
 }

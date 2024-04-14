@@ -17,6 +17,7 @@ public class AddressController {
     private final AddressService addressService;
 
     private final AddressMapper addressMapper;
+
     @GetMapping("/list")
     public List<AddressDTO> test() {
         return addressService.getAllAddresses().stream().map(addressMapper::toDTO).toList();
@@ -30,6 +31,11 @@ public class AddressController {
     @PostMapping("/")
     public long saveAddress(@RequestBody AddressDTO addressDTO) {
         return addressService.saveAddress(addressDTO);
+    }
+
+    @PostMapping("/many")
+    public List<Long> saveAdresses(@RequestBody List<AddressDTO> addressDTO) {
+        return addressService.saveAll(addressDTO);
     }
 
     @GetMapping("/{id}")
@@ -46,4 +52,6 @@ public class AddressController {
     public void update(@PathVariable("id") long id) {
         addressService.deleteAddress(id);
     }
+
+
 }
